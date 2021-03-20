@@ -1,16 +1,16 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import './CardView.css'
 
 function CardView({ pic, title, data }) {
     return (
         <div>
-            <Card style={{ width: '10rem' }}>
-                <Card.Img variant="top" className={pic} />
-                <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Text>
-                       {data}
-                    </Card.Text>
+            <Card style={{ width: '8rem' , height:'10rem'}}>
+                <Card.Body className='d-flex flex-column justify-content-between align-items-center mr-1'>
+                    <i className={pic+' text-center'} />
+                    <Card.Text className='card_title text-center'>{title}</Card.Text>
+                    <Card.Subtitle className="mb-1 font-weight-bold">{data}</Card.Subtitle>
+                   
                 </Card.Body>
             </Card>
         </div>

@@ -3,7 +3,7 @@ import { Button, Nav, Navbar } from 'react-bootstrap'
 import ModalView from './ModalView'
 
 function NavBar() {
-    const [visible,setVisible] = useState(false)
+    const [visible,setVisible] = useState(true)
     const toggleVisible =()=>{setVisible(false);}
     return (
         <>

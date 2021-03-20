@@ -1,19 +1,37 @@
 import React, { useState } from 'react'
-import { Button, Modal, ModalBody, ModalFooter } from 'react-bootstrap'
+import { Button, Form, Modal, ModalBody, ModalFooter } from 'react-bootstrap'
 import ModalHeader from 'react-bootstrap/esm/ModalHeader'
 
-function ModalView({ visible ,changeVisibility}) {
-    const [close,setClose] = useState(visible) ;
+function ModalView({ visible, changeVisibility }) {
 
+   const [invite,setInvite] = useState(0)
+   const [duration,setDuration] =useState(0)
     return (
         <div>
             <Modal show={visible} >
-                <ModalHeader className='text-center'>Mutual Fund Return Calculator</ModalHeader>
+                <ModalHeader className='text-center'>Calculator</ModalHeader>
                 <ModalBody>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <Form>
+                        <Form.Group>
+                            <div className='d-flex justify-content-between'>
+                            <Form.Label>Number of Invites</Form.Label>
+                            <Form.Label className="border-bottom">{invite}</Form.Label>
+                            </div>
+                            <Form.Control type="range" onChange={(e)=>{setInvite(e.target.value)}} value={invite} step='10'/>
+                        </Form.Group>
+                        <Form.Group>
+                            <div className='d-flex justify-content-between'>
+                            <Form.Label>Event Duration</Form.Label>
+                            <Form.Label className="border-bottom">{duration} min</Form.Label>
+                            </div>
+                            <Form.Control type="range" onChange={(e)=>{setDuration(e.target.value)}} value={duration} max='120' step='30'/>
+                        </Form.Group>
+
+                    </Form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={()=>changeVisibility(false)}>Close</Button>{' '}
+                    <Button color="btn btn-danger" disabled={(!invite)&&(!duration)}>Book Slot</Button>{' '}
+                    <Button className='btn btn-danger' onClick={() => changeVisibility(false)}>Close</Button>{' '}
                 </ModalFooter>
             </Modal>
         </div>
