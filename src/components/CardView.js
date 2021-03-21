@@ -5,7 +5,7 @@ import './CardView.css'
 function CardView({ pic, title, data }) {
     return (
         <div>
-            <Card style={{ minwidth: '10rem' , height:'10rem'}} className='mb-1'>
+            <Card style={{height:'10rem'}} className='bg-dark text-light mb-1'>
                 <Card.Body className='d-flex flex-column justify-content-between align-items-center mr-1'>
                     <i className={pic+' text-center'} />
                     <Card.Text className='card_title text-center'>{title}</Card.Text>

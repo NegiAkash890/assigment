@@ -3,7 +3,7 @@ import { Button, Form, Modal, ModalBody, ModalFooter } from 'react-bootstrap'
 import ModalHeader from 'react-bootstrap/esm/ModalHeader'
 import Chart from 'chart.js'
 
-function ModalView({ visible, changeVisibility }) {
+function ModalView({ visible, toggleVisible }) {
 
     const [invite, setInvite] = useState(0)
     const [duration, setDuration] = useState(0)
@@ -12,6 +12,7 @@ function ModalView({ visible, changeVisibility }) {
         var ctx = document.getElementById('priceChart');
         const curr_amount = invite*duration ;
         const total = 100*120*1 ;
+        if(visible){
         new Chart(ctx, {
             type: 'pie',
             data: {
@@ -29,23 +30,23 @@ function ModalView({ visible, changeVisibility }) {
             options: {
                 "cutoutPercentage": "50",
                 animation: {
-                    duration: 0 // general animation time
+                    duration: 0 
                 },
                 hover: {
                     animationDuration: 0 
                 },
             }
 
-        });
+        });}
 
 
-    }, [invite, duration])
+    }, [invite, duration,visible])
     return (
         <div>
             <Modal show={visible} >
                 <ModalHeader className='text-center'><i className='fa fa-calculator'> Calculator</i></ModalHeader>
                 <ModalBody>
-                    <canvas id='priceChart' disabled></canvas>
+                    <canvas id='priceChart'></canvas>
                     <Form>
                         <Form.Group>
                             <div className='d-flex justify-content-between'>
@@ -67,7 +68,7 @@ function ModalView({ visible, changeVisibility }) {
                 </ModalBody>
                 <ModalFooter>
                     <Button color="btn btn-danger" disabled={(!invite) && (!duration)}>Book Slot</Button>{' '}
-                    <Button className='btn btn-danger' onClick={() => changeVisibility(false)}>Close</Button>{' '}
+                    <Button className='btn btn-danger' onClick={() => toggleVisible(false)}>Close</Button>{' '}
                 </ModalFooter>
             </Modal>
         </div>

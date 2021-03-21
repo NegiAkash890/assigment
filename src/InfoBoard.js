@@ -52,7 +52,7 @@ function InfoBoard() {
                             <Card.Text>
                                Events Soon !
                             </Card.Text>
-                            <button class="btn btn-primary">Start Trial</button>
+                            <button className="btn btn-primary">Start Trial</button>
                         </Card.ImgOverlay>
                     </Card>
                 </Col>
