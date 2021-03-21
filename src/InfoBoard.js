@@ -6,8 +6,8 @@ function InfoBoard() {
     return (
         <div className='mt-4'>
             <Row>
-                <Col sm={6}>
-                    <Card >
+                <Col sm={12} md={6} className='mt-2'>
+                    <Card>
                         <CardTop icon='fa fa-user' heading="New User" text="see all" />
                         <Card.Body className='d-flex align-items-center bg bg-light'>
                             <Card.Img variant="left" src="https://ih0.redbubble.net/image.618427277.3222/flat,50x50,075,f.u1.jpg" />
@@ -19,7 +19,7 @@ function InfoBoard() {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col sm={6}>
+                <Col sm={12} md={6} className='mt-2'>
                     <Card>
                         <CardTop icon='fa fa-user' heading="Blogs" text="New" />
                         <ListGroup variant="flush text-dark">
@@ -31,8 +31,8 @@ function InfoBoard() {
                     </Card>
                 </Col>
             </Row>
-            <Row className="mt-4">
-                <Col sm={6}>
+            <Row>
+                <Col sm={12} md={6} className='mt-2'>
                     <Card>
                         <CardTop icon='fa fa-cogs' heading="Event Log" text="see all" />
                         <Card.Body className='d-flex align-items-center bg-light'>
@@ -44,8 +44,8 @@ function InfoBoard() {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col sm={6}>
-                    <Card className="bg-dark text-white">
+                <Col>
+                    <Card sm={12} md={6}  className="bg-dark text-white mt-3 mb-3">
                         <Card.Img src="https://wallup.net/wp-content/uploads/2016/05/26/274872-digital_art-dark-Tile-cube.jpg" alt="Card image" />
                         <Card.ImgOverlay>
                             <Card.Title>Trial Period</Card.Title>

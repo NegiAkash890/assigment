@@ -23,10 +23,10 @@ function StatusBoard() {
     }, [])
     return (
         <Row>
-            <Col sm={8} >
+            <Col xs={12} >
                 <canvas id='myChart'></canvas>
             </Col>
-            <Col sm={4}>
+            <Col md={12} className='mt-4'>
                 <Row>
                     <Col sm={4}><CardView pic="fa fa-lg fa-user" title="All users" data="1" /></Col>
                     <Col sm={4}><CardView pic="fa fa-lg fa-retweet" title="Conversions" data="0%" /></Col>

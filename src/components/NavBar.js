@@ -16,7 +16,7 @@ function NavBar() {
                     <Nav.Link href="#pricing">Login</Nav.Link>
                 </Nav>
                 <Button onClick={()=>setVisible(true)}>
-                     Calculate
+                     Invite
                 </Button>
                 
             </Navbar>

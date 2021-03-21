@@ -1,15 +1,15 @@
 import NavBar from './components/NavBar';
-import { Button } from 'reactstrap'
 import InfoBoard from './InfoBoard';
 import StatusBoard from './StatusBoard';
 import { Container, Row } from 'react-bootstrap';
+import './App.css'
 
 function App() {
   return (
     <div className="App">
 
       <NavBar />
-      <Container fluid='md' className="mt-4">
+      <Container className="mt-4">
         <StatusBoard />
         <InfoBoard />
       </Container>
